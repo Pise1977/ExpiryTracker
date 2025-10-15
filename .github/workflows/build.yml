@@ -10,16 +10,24 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
       
-    - name: Download correct gradle-wrapper.jar
+    - name: Setup Android
+      uses: android-actions/setup-android@v3
+      
+    - name: Install Gradle and Fix Wrapper
       run: |
-        wget -O gradle/wrapper/gradle-wrapper.jar https://repo.maven.apache.org/maven2/gradle/wrapper/gradle-wrapper/8.5/gradle-wrapper-8.5.jar
-        chmod +x ./gradlew
+        # Installa Gradle
+        wget https://services.gradle.org/distributions/gradle-8.5-bin.zip
+        unzip gradle-8.5-bin.zip
+        # Rigenera il wrapper
+        ./gradle-8.5/bin/gradle wrapper --gradle-version=8.5
         
     - name: Build APK
-      run: ./gradlew assembleDebug
+      run: |
+        chmod +x ./gradlew
+        ./gradlew assembleDebug
         
     - name: Upload APK
       uses: actions/upload-artifact@v4
       with:
-        name: my-app
+        name: android-app
         path: app/build/outputs/apk/**/*.apk
