@@ -1,24 +1,17 @@
 name: Build Android App
-
 on: [push]
-
 jobs:
   build:
     runs-on: ubuntu-latest
-    
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-      
     - name: Setup Android
       uses: android-actions/setup-android@v3
-      
     - name: Build APK
       run: |
-        ls -la
         chmod +x ./gradlew
         ./gradlew assembleDebug
-        
     - name: Upload APK
       uses: actions/upload-artifact@v4
       with:
