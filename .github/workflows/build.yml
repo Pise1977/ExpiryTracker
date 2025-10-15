@@ -1,8 +1,6 @@
-name: Build Android APK
+name: Android Build
 
-on:
-  push:
-    branches: [ main ]
+on: [push, pull_request]
 
 jobs:
   build:
@@ -21,17 +19,16 @@ jobs:
     - name: Setup Android SDK
       uses: android-actions/setup-android@v3
       
-    - name: Build and List Files
+    - name: Fix Gradle Problem
       run: |
+        ./gradlew --version || gradle wrapper --gradle-version=8.5
         chmod +x ./gradlew
-        ./gradlew assembleDebug
-        echo "=== FILE STRUCTURE ==="
-        find . -name "*.apk" -type f
-        echo "=== BUILD OUTPUTS ==="
-        ls -la app/build/outputs/
+    
+    - name: Build APK
+      run: ./gradlew assembleDebug
       
-    - name: Upload ANY APK Found
-      uses: actions/upload-artifact@v4
+    - name: Upload APK
+      uses: actions/upload-artifact@v3
       with:
-        name: android-apk
-        path: "**/*.apk"
+        name: app-debug-apk
+        path: app/build/outputs/apk/debug/*.apk
