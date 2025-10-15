@@ -21,13 +21,17 @@ jobs:
     - name: Setup Android SDK
       uses: android-actions/setup-android@v3
       
-    - name: Build APK
+    - name: Build and List Files
       run: |
         chmod +x ./gradlew
-        ./gradlew build
+        ./gradlew assembleDebug
+        echo "=== FILE STRUCTURE ==="
+        find . -name "*.apk" -type f
+        echo "=== BUILD OUTPUTS ==="
+        ls -la app/build/outputs/
       
-    - name: Find and Upload APK
+    - name: Upload ANY APK Found
       uses: actions/upload-artifact@v4
       with:
-        name: app-apk
-        path: app/build/outputs/apk/**/*.apk
+        name: android-apk
+        path: "**/*.apk"
