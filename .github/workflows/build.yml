@@ -1,9 +1,0 @@
-name: Build APK
-on: [push]
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Build APK
-        uses: android-actions/build-apk@v1
