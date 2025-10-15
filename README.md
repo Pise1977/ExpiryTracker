@@ -11,3 +11,4 @@ App Android per tracciare prodotti in scadenza.
 ## Download
 Scarica l'APK dalla sezione Actions!
 - Build corretto
+- Build: ✅ File structure corretta
