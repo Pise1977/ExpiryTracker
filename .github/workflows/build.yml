@@ -10,13 +10,13 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
       
-    - name: Setup Android
-      uses: android-actions/setup-android@v3
-      
-    - name: Build APK
+    - name: Download correct gradle-wrapper.jar
       run: |
+        wget -O gradle/wrapper/gradle-wrapper.jar https://repo.maven.apache.org/maven2/gradle/wrapper/gradle-wrapper/8.5/gradle-wrapper-8.5.jar
         chmod +x ./gradlew
-        ./gradlew assembleDebug
+        
+    - name: Build APK
+      run: ./gradlew assembleDebug
         
     - name: Upload APK
       uses: actions/upload-artifact@v4
