@@ -1,0 +1,47 @@
+const tintColorLight = "#2f95dc";
+
+export default {
+  light: {
+    text: "#000",
+    background: "#fff",
+    tint: tintColorLight,
+    tabIconDefault: "#ccc",
+    tabIconSelected: tintColorLight,
+  },
+};
+
+export const COLORS = {
+  background: '#F7F9FC',
+  backgroundOverlay: 'rgba(247, 249, 252, 0.98)',
+  primary: '#5B7FFF',
+  primaryDark: '#4867D6',
+  secondary: '#FF6B9D',
+  secondaryDark: '#E95384',
+  accent: '#FFA94D',
+  warning: '#FFB647',
+  danger: '#FF5757',
+  info: '#5B7FFF',
+  success: '#4CAF7A',
+  purple: '#9D7FF5',
+  purpleDark: '#7D5DD6',
+  teal: '#42D4C0',
+  yellow: '#FFD93D',
+  orange: '#FF9770',
+  pink: '#FF8FB1',
+  white: '#FFFFFF',
+  black: '#1A1D2E',
+  gray50: '#FAFBFC',
+  gray100: '#F4F6FA',
+  gray200: '#E8EBF2',
+  gray300: '#D4D9E5',
+  gray400: '#B8BECC',
+  gray500: '#9CA3B4',
+  gray600: '#717785',
+  gray700: '#4A4E5C',
+  gray800: '#2E3240',
+  gray900: '#1A1D2E',
+  shadowLight: 'rgba(0, 0, 0, 0.04)',
+  shadowMedium: 'rgba(0, 0, 0, 0.08)',
+  shadowDark: 'rgba(91, 127, 255, 0.15)',
+  shadowPink: 'rgba(255, 107, 157, 0.15)',
+} as const;
