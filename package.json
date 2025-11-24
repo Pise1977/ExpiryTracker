@@ -1,22 +1,13 @@
 {
-  "name": "expirytracker",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "start": "expo start",
-    "android": "expo run:android",
-    "ios": "expo run:ios",
-    "web": "expo start --web"
-  },
-  "dependencies": {
-    "@rork/toolkit-sdk": "file:./lib",
-    "expo": "^51.0.0",
-    "expo-calendar": "^15.0.7",
-    "expo-camera": "^17.0.9",
-    "expo-image-picker": "^17.0.8",
-    "expo-notifications": "^0.32.13",
-    "expo-router": "^6.0.15",
-    "react": "18.2.0",
-    "react-native": "0.74.0"
+  "expo": {
+    "name": "expirytracker",
+    "slug": "expirytracker",
+    "plugins": [
+      "expo-router",
+      "expo-camera",
+      "expo-image-picker",
+      "expo-calendar",
+      "expo-notifications"
+    ]
   }
 }
