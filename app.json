@@ -29,7 +29,7 @@
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "app.rork.food-expiry-reminder-and-recipe-suggestion-app",
+      "package": "com.pise77.foodexpiryreminderandrecipesuggestionapp",
       "permissions": [
         "android.permission.VIBRATE",
         "android.permission.CAMERA",
@@ -76,13 +76,9 @@
       [
         "expo-notifications",
         {
-          "icon": "./local/assets/notification_icon.png",
           "color": "#ffffff",
           "defaultChannel": "default",
-          "sounds": [
-            "./local/assets/notification_sound.wav"
-          ],
-          "enableBackgroundRemoteNotifications": false
+                "enableBackgroundRemoteNotifications": false
         }
       ],
       "expo-localization"

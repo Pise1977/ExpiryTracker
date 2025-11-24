@@ -23,3 +23,5 @@ export const trpcClient = trpc.createClient({
     }),
   ],
 });
+
+export { generateText, translateText, summarizeText };
