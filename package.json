@@ -11,6 +11,7 @@
   "dependencies": {
     "@rork/toolkit-sdk": "file:./lib",
     "expo": "^51.0.0",
+    "expo-calendar": "^15.0.7",
     "expo-camera": "^17.0.9",
     "expo-image-picker": "^17.0.8",
     "expo-router": "^6.0.15",
