@@ -9,9 +9,10 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@rork/toolkit-sdk": "file:./lib",
     "expo": "^51.0.0",
+    "expo-router": "^6.0.15",
     "react": "18.2.0",
-    "react-native": "0.74.0",
-    "@rork/toolkit-sdk": "file:./lib"
+    "react-native": "0.74.0"
   }
 }
